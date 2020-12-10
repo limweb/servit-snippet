@@ -1,0 +1,56 @@
+{
+    "name": "servit-snippet",
+    "displayName": "servit-snippet",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/php.json"
+            },
+            {
+                "language": "",
+                "path": "./snippets/vfox.json"
+            },
+            {
+                "language": "php",
+                "path": "./snippets/jacwright.code-snippets"
+            },
+            {
+                "language": "",
+                "path": "./snippets/dockercompose.code-snippets"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/restful.code-snippets"
+            },
+            {
+                "language": "",
+                "path": "./snippets/tlen-docker.code-snippets"
+            },
+            {
+                "language": "",
+                "path": "./snippets/tlen.code-snippets"
+            },
+            {
+                "language": "",
+                "path": "./snippets/vuecdn.code-snippets"
+            },
+            {
+                "language": "",
+                "path": "./snippets/vuejs.code-snippets"
+            }
+        ]
+    }
+}

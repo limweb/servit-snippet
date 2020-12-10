@@ -1,0 +1,33 @@
+{
+    "fetch": {
+        "body": [
+            "${1:let formData = new FormData(document.querySelector('${2:form.edit-user}'))}",
+            "let url = '${5:http://127.0.0.1/api/v1/players}';",
+            "fetch(url, {",
+            "   method: '${10|GET,POST,PUT,DELETE|}', ",
+            "   ${11:mode: '${12|cors,no-cors,same-origin|}',}",
+            "   ${13:cache: '${14|default,no-cache,reload,force-cache,only-if-cached|}',}",
+            "   ${15:credentials: '${16|include,same-origin,omit|}',}",
+            "  ${17:headers: {",
+            "    ${18|'Content-Type': 'application/json',",
+            "    'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',",
+            "    'User-agent': 'Mozilla/4.0 Custom User Agent'|}",
+            "    ${19:'Accept': 'application/json',",
+            "    'Content-Type': 'application/json',",
+            "    'Authorization': 'Bearer ' + this.state.clientToken,",
+            "    'Host': 'api.producthunt.com',}",
+            "  \\},}",
+            "   ${22:redirect: '${23|manual,follow,error|}',}",
+            "   ${24:referrer: '${25|no-referrer,client|}',}",
+            "   ${26|body: JSON.stringify(data),body: formData|}",
+            "  }).then((res)=>{ ",
+            "      return res.${90|clone(),redirect(),arrayBuffer(),formData(),blob(),text(),json()|}",
+            "}).then((data)=>{ ",
+            "   let rs = data ",
+            "}).catch(error => console.error('Error:', error));",
+            "${0}"
+        ],
+        "prefix": "fetch",
+        "description": "Fetch JS call API"
+    },
+}
