@@ -1,4 +1,39 @@
 {
+    "namesp1":{
+        "prefix":[ "namesp1","namespace"],
+        "body":[
+             "namespace ${TM_DIRECTORY/([^\\\\]*\\\\){1}(.*)/$2/};",
+        ],
+        "description": "php namespcce"
+    },
+    "namesp2":{
+        "prefix":[ "namesp2","namespace"],
+        "body":[
+             "namespace ${TM_DIRECTORY/([^\\\\]*\\\\){2}(.*)/$2/};",
+        ],
+        "description": "php namespcce"
+    },
+    "namesp3":{
+        "prefix":[ "namesp3","namespace"],
+        "body":[
+             "namespace ${TM_DIRECTORY/([^\\\\]*\\\\){3}(.*)/$2/};",
+        ],
+        "description": "php namespcce"
+    },
+    "namesp4":{
+        "prefix":[ "namesp4","namespace"],
+        "body":[
+             "namespace ${TM_DIRECTORY/([^\\\\]*\\\\){4}(.*)/$2/};",
+        ],
+        "description": "php namespcce"
+    },
+    "namesp5":{
+        "prefix":[ "namesp5","namespace"],
+        "body":[
+             "namespace ${TM_DIRECTORY/([^\\\\]*\\\\){5}(.*)/$2/};",
+        ],
+        "description": "php namespcce"
+    },
     "delfunc": {
         "prefix": "delfunc",
         "body": "// ${1} ${6}\r\npublic function delete${1/(.*)/\\u$1/}(${2}) {\r\n    //$this->request\r\n    //$this->input\r\n    try {\r\n\t\t${3}\r\n\t\t$o = new stdClass();\r\n        # code...\r\n\t\t${4}\r\n\r\n       $this->response($o,'json'); \r\n    } catch (Exception $e) {\r\n    \t${5}\r\n       $this->rest_error(-1,$e->getMessage(),'json'); \r\n    }\r\n}\r\n\r\n",

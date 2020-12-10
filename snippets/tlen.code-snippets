@@ -358,7 +358,9 @@
   "restctrl": {
     "prefix": "restctrl",
     "body": [
-      "\r",
+      " ",
+      "namespace ${1}$0 ${TM_DIRECTORY};"
+      "",
       "//----------------------------------------------",
       "//FILE NAME:  ${TM_FILENAME} gen for Servit Framework Controller\r",
       "//Created by: Tlen<limweb@hotmail.com>\r",

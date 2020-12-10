@@ -1,10 +1,22 @@
 {
     "name": "servit-snippet",
     "displayName": "servit-snippet",
-    "description": "",
+    "publisher": "limweb",
+    "description": "servit-snippet  snippet for servit framework",
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.51.0"
+        "vscode": "^1.49.0"
+    },
+    "keywords": [
+        "php",
+        "vue",
+        "servit",
+        "jacwrider"
+    ],
+    "homepage": "https://github.com/limweb/servit-snippet/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/limweb/servit-snippet"
     },
     "categories": [
         "Snippets"
