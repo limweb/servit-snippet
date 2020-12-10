@@ -3,6 +3,7 @@
     "displayName": "servit-snippet",
     "publisher": "limweb",
     "description": "servit-snippet  snippet for servit framework",
+    "icon": "logo.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.49.0"
