@@ -116,7 +116,9 @@
       "//Created by: ${1:Tlen<limweb@hotmail.com>}\r",
       "//DATE: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}(${CURRENT_DAY_NAME_SHORT})  ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND} \r\n",
       "//----------------------------------------------",
-      "${2}namespace App; \r",
+      " ",
+      "namespace ${2}$0 ${TM_DIRECTORY};"
+      "",
       "use Illuminate\\Database\\Eloquent\\Model;\r",
       "use Illuminate\\Database\\Eloquent\\SoftDeletes;\r",
       "use Servit\\Restsrv\\Model\\BaseModel;\r",
@@ -280,6 +282,9 @@
     "prefix": "restsrv",
     "body": [
       "\r",
+      " ",
+      "namespace ${1}$0 ${TM_DIRECTORY};"
+      "",
       "//----------------------------------------------",
       "//FILE NAME:  ${TM_FILENAME} gen for Servit Framework Service\r",
       "//Created by: Tlen<limweb@hotmail.com>\r",
@@ -291,9 +296,9 @@
       "use \\Servit\\Restsrv\\Service\\BasedbService as BasedbService;\r",
       "use Illuminate\\Database\\Capsule\\Manager as Capsule;\r",
       "\r",
-      "class ${1:${TM_FILENAME_BASE}${2:Service}} extends BaseService\r",
+      "class ${10:${TM_FILENAME_BASE}${15:Service}} extends BaseService\r",
       "{\r",
-      "${3:\r",
+      "${20:\r",
       "    public static function all()",
       "    {",
       "        return ${30:Model}::get();",
