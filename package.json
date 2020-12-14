@@ -1,73 +1,240 @@
 {
-    "name": "servit-snippet",
-    "displayName": "servit-snippet",
-    "publisher": "limweb",
-    "description": "servit-snippet  snippet for servit framework",
-    "icon": "logo.png",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.49.0"
-    },
-    "keywords": [
-        "php",
-        "vue",
-        "servit",
-        "jacwrider"
-    ],
-    "homepage": "https://github.com/limweb/servit-snippet/blob/master/README.md",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/limweb/servit-snippet"
-    },
-    "categories": [
-        "Snippets"
-    ],
-    "contributes": {
-        "snippets": [
+   "name":"servit-snippet",
+   "displayName":"servit-snippet",
+   "publisher":"limweb",
+   "description":"servit-snippet  snippet for servit framework",
+   "icon":"logo.png",
+   "version":"0.0.3",
+   "engines":{
+      "vscode":"^1.52.0"
+   },
+   "keywords":[
+      "php",
+      "vue",
+      "servit",
+      "jacwrider"
+   ],
+   "homepage":"https://github.com/limweb/servit-snippet/blob/master/README.md",
+   "repository":{
+      "type":"git",
+      "url":"https://github.com/limweb/servit-snippet"
+   },
+   "activationEvents":[
+      "onCommand:tlen-ext.tlenVersion"
+   ],
+   "categories":[
+      "Snippets",
+      "Keymaps",
+      "Other"
+   ],
+   "main":"./src/extension.js",
+   "contributes":{
+      "snippets":[
+         {
+            "language":"",
+            "path":"./snippets/snippets.code-snippets"
+         },
+         {
+            "language":"php",
+            "path":"./snippets/php.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/vfox.code-snippets"
+         },
+         {
+            "language":"php",
+            "path":"./snippets/jacwright.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/dockercompose.code-snippets"
+         },
+         {
+            "language":"javascript",
+            "path":"./snippets/restful.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/tlen-docker.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/tlen.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/vuecdn.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/vuejs.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/jenkins.code-snippets"
+         }
+      ],
+      "commands":[
+         {
+            "command":"tlen-ext.tlenVersion",
+            "title":"tlen version"
+         }
+      ],
+      "menus":{
+         "editor/context":[
             {
-                "language": "",
-                "path": "./snippets/snippets.code-snippets"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/php.json"
-            },
-            {
-                "language": "",
-                "path": "./snippets/vfox.json"
-            },
-            {
-                "language": "php",
-                "path": "./snippets/jacwright.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/dockercompose.code-snippets"
-            },
-            {
-                "language": "javascript",
-                "path": "./snippets/restful.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/tlen-docker.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/tlen.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/vuecdn.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/vuejs.code-snippets"
-            },
-            {
-                "language": "",
-                "path": "./snippets/jenkins.code-snippets"
+               "command":"tlen-ext.tlenVersion",
+               "group":"tlen"
             }
-        ]
-    }
+         ]
+      },
+      "keybindings":[
+         {
+            "key":"ctrl+.",
+            "command":"workbench.action.showCommands"
+         },
+         {
+            "key":"ctrl+d",
+            "command":"editor.action.deleteLines",
+            "when":"editorTextFocus && !editorReadonly"
+         },
+         {
+            "key":"ctrl+shift+t",
+            "command":"shellLauncher.launch"
+         },
+         {
+            "key":"ctrl+shift+k",
+            "command":"-editor.action.deleteLines",
+            "when":"editorTextFocus && !editorReadonly"
+         },
+         {
+            "key":"ctrl+'",
+            "command":"workbench.action.terminal.toggleTerminal"
+         },
+         {
+            "key":"ctrl+`",
+            "command":"-workbench.action.terminal.toggleTerminal"
+         },
+         {
+            "key":"ctrl+shift+'",
+            "command":"workbench.action.terminal.new"
+         },
+         {
+            "key":"ctrl+shift+`",
+            "command":"-workbench.action.terminal.new"
+         },
+         {
+            "key":"ctrl+l",
+            "command":"workbench.action.gotoLine"
+         },
+         {
+            "key":"ctrl+g",
+            "command":"-workbench.action.gotoLine"
+         },
+         {
+            "key":"f12",
+            "command":"editor.action.formatDocument",
+            "when":"editorTextFocus && !editorReadonly"
+         },
+         {
+            "key":"shift+alt+f",
+            "command":"-editor.action.formatDocument",
+            "when":"editorTextFocus && !editorReadonly"
+         },
+         {
+            "key":"ctrl+m",
+            "command":"workbench.action.editor.changeLanguageMode"
+         },
+         {
+            "key":"ctrl+k m",
+            "command":"-workbench.action.editor.changeLanguageMode"
+         },
+         {
+            "key":"ctrl+k ctrl+m",
+            "command":"editor.action.jumpToBracket",
+            "when":"editorFocus"
+         },
+         {
+            "key":"ctrl+m",
+            "command":"-editor.action.jumpToBracket",
+            "when":"editorFocus"
+         },
+         {
+            "key":"f12",
+            "command":"HookyQR.beautifyFile"
+         },
+         {
+            "key":"alt+shift+f",
+            "command":"phpformatter.fix",
+            "when":"editorFocus"
+         },
+         {
+            "key":"ctrl+k ctrl+p",
+            "command":"workbench.action.keepEditor"
+         },
+         {
+            "key":"ctrl+k enter",
+            "command":"-workbench.action.keepEditor"
+         },
+         {
+            "key":"ctrl+t",
+            "command":"bookmarks.toggle",
+            "when":"editorTextFocus"
+         },
+         {
+            "key":"ctrl+alt+k",
+            "command":"-bookmarks.toggle",
+            "when":"editorTextFocus"
+         },
+         {
+            "key":"ctrl+alt+down",
+            "command":"-editor.action.insertCursorBelow",
+            "when":"editorTextFocus"
+         },
+         {
+            "key":"ctrl+alt+win+down",
+            "command":"editor.action.copyLinesDownAction"
+         },
+         {
+            "key":"ctrl+alt+pagedown",
+            "command":"-workbench.action.terminal.scrollDown",
+            "when":"terminalFocus && terminalProcessSupported"
+         },
+         {
+            "key":"ctrl+shift+r",
+            "command":"workbench.action.reopenClosedEditor"
+         },
+         {
+            "key":"ctrl+shift+t",
+            "command":"-workbench.action.reopenClosedEditor"
+         },
+         {
+            "key":"ctrl+alt+win+up",
+            "command":"editor.action.insertCursorAbove",
+            "when":"editorTextFocus"
+         },
+         {
+            "key":"ctrl+alt+up",
+            "command":"-editor.action.insertCursorAbove",
+            "when":"editorTextFocus"
+         }
+      ]
+   },
+   "scripts":{
+      "lint":"eslint .",
+      "pretest":"yarn run lint",
+      "test":"node ./test/runTest.js"
+   },
+   "devDependencies":{
+      "@types/vscode":"^1.52.0",
+      "@types/glob":"^7.1.3",
+      "@types/mocha":"^8.0.4",
+      "@types/node":"^12.11.7",
+      "eslint":"^7.15.0",
+      "glob":"^7.1.6",
+      "mocha":"^8.1.3",
+      "typescript":"^4.1.2",
+      "vscode-test":"^1.4.1"
+   }
 }
