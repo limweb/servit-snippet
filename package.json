@@ -47,6 +47,10 @@
             "path":"./snippets/jacwright.code-snippets"
          },
          {
+            "language":"php",
+            "path":"./snippets/eloquent.code-snippets"
+         },
+         {
             "language":"",
             "path":"./snippets/dockercompose.code-snippets"
          },

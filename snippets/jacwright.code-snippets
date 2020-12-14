@@ -2,8 +2,8 @@
 	"jacwctrl" :{
 		"prefix": "jacwrightctrl",
 		"body": [
-			" use	Illuminate\Database\Capsule\Manager as Capsule;",
-			" use	Carbon\Carbon;",
+			" use	Illuminate\\Database\\Capsule\\Manager as Capsule;",
+			" use	Carbon\\Carbon;",
 			" ",
 			" class ${20:${TM_FILENAME_BASE}${22:Controller}} {",
 			"     ${0}",
