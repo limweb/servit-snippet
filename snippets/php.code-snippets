@@ -1,4 +1,9 @@
 {
+    "namesp":{ 
+	   "prefix": "namesp",
+	   "body": "namespace ${TM_DIRECTORY/.*(services|controllers|models)\\\\(.*)/$2/};",
+	   "description": "name space for  services controllers models"
+    },
     "namesp1":{
         "prefix":[ "namesp1","namespace"],
         "body":[
