@@ -156,11 +156,6 @@
             "when":"editorFocus"
          },
          {
-            "key":"ctrl+m",
-            "command":"-editor.action.jumpToBracket",
-            "when":"editorFocus"
-         },
-         {
             "key":"f12",
             "command":"HookyQR.beautifyFile"
          },
