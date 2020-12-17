@@ -4,7 +4,7 @@
    "publisher":"limweb",
    "description":"servit-snippet  snippet for servit framework",
    "icon":"logo.png",
-   "version":"0.0.3",
+   "version":"0.0.4",
    "engines":{
       "vscode":"^1.52.0"
    },
@@ -221,6 +221,7 @@
       ]
    },
    "scripts":{
+      "build":"vsce package",
       "lint":"eslint .",
       "pretest":"yarn run lint",
       "test":"node ./test/runTest.js"

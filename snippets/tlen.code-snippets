@@ -112,6 +112,7 @@
     "body": [
       "<?php",
       "",
+      "namespace  ${1}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\?(.*)/$2/};",
       "",
       "//----------------------------------------------",
       "//FILE NAME:  ${TM_FILENAME} gen for Servit Framework Model ",
@@ -119,7 +120,6 @@
       "//DATE: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}(${CURRENT_DAY_NAME_SHORT})  ${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}  \n",
       "//----------------------------------------------",
       "",
-      "namespace  ${2}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\(.*)/$2/};",
       "",
       "use Illuminate\\Database\\Eloquent\\Model; ",
       "use Illuminate\\Database\\Eloquent\\SoftDeletes; ",
@@ -288,7 +288,7 @@
     "body": [
       "<?php",
       "",
-      "namespace  ${1}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\(.*)/$2/};",
+      "namespace  ${1}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\?(.*)/$2/};",
       "",
       "//----------------------------------------------",
       "//FILE NAME:  ${TM_FILENAME} gen for Servit Framework Service",
@@ -476,7 +476,7 @@
     "body": [
       "<?php",
       "",
-      "namespace  ${1}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\(.*)/$2/};",
+      "namespace  ${1}$0 ${TM_DIRECTORY/.*(services|controllers|models)\\\\?(.*)/$2/};",
       "",
       "//----------------------------------------------",
       "//FILE NAME:  ${TM_FILENAME} gen for Servit Framework Controller",
