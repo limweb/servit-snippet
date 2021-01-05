@@ -783,7 +783,7 @@
             "            //--------- insert Details----------start",
             "                \\$details = [];",
             "                \\$detaildatas = \\$arrdata['${40:details}'];",
-            "                foreach (\\$detaildatas as \\$key => \\$detail) {",
+            "                foreach (\\$detaildatas as \\$detail) {",
             "                    \\$d = new ${50:\\DetailModel}();",
             "                     if(empty(\\$detail_fills)){ ",
             "                         \\$detail_fills = \\$d->getFillable();",
