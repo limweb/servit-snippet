@@ -4,7 +4,7 @@
    "publisher":"limweb",
    "description":"servit-snippet  snippet for servit framework",
    "icon":"logo.png",
-   "version":"0.0.4",
+   "version":"0.0.5",
    "engines":{
       "vscode":"^1.52.0"
    },
@@ -33,6 +33,10 @@
          {
             "language":"",
             "path":"./snippets/snippets.code-snippets"
+         },
+         {
+            "language":"",
+            "path":"./snippets/restserver.code-snippets"
          },
          {
             "language":"php",
