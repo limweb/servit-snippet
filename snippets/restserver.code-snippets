@@ -159,7 +159,6 @@
             "                \\$msg = '401 Unauthorized';     ",
             "            \\} ",
             "        ",
-            "        ",
             "        return [",
             "            //'ajax' => \\$ajax,",
             "            //'page' => \\$page,",
@@ -222,7 +221,6 @@
             "        ]; ",
             "    }",
             "}",
-            "",
             ""
         ],
         "description": "Serv Rest ful function Generator"
@@ -295,7 +293,6 @@
             "        }  ",
             "           ",
             "}",
-            "",
             ""
         ],
         "description": "Serv Rest ful function Generator"
