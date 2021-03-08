@@ -5,5 +5,5 @@
 ## build
     vsce package
 ## install
-    code --install-extension  servit-snippet-0.0.13.vsix 
+    code --install-extension  servit-snippet-0.0.14.vsix 
     
