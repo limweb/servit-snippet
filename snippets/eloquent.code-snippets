@@ -1,6 +1,6 @@
 {
   "eloquentrela": {
-    "prefix": "eloquentrela",
+    "prefix": ["elorela","eloquentrela"],
     "body": [
       "/**",
       "* ${1}",
@@ -8,13 +8,13 @@
       "* @return ${3:void}",
       "*/",
       "public function ${5:functionname}() {",
-      "   return \\$this->${6|hasOne,hasMany,belongsTo|}('${30:Model}', '${40:foreign_key}', '${50:local_key}');",
+      "   return \\$this->${10|hasOne,hasMany,belongsTo|}('${30:Model}', '${40:foreign_key}',${50:'${60:local_key/owner_key}'});",
       "}",
     ],
     "description": " Eloquent Relation Snippet",
   },
   "eloquentbelongsToMany": {
-    "prefix": "eloquentbelongsToMany",
+    "prefix": ["elobelong","elomany2many","eloquentbelongsToMany"],
     "body": [
       "/**",
       "* ${1}",
@@ -22,20 +22,20 @@
       "* @return ${3:void}",
       "*/",
       "public function ${5:functionname}() {",
-      "   return \\$this->belongsToMany('${30:Model}', '${40:relation_table}', '${50:model_id}', '${60:relation_id}');",
+      "   return \\$this->belongsToMany(${30:'${35:Model::class}'}, '${40:relation_table}', '${50:model_id}', '${60:relation_id}');",
       "}",
     ],
     "description": " Eloquent Relation belongsToMany Snippet",
   },
   "eloquenthas": {
-    "prefix": "eloquenthas",
+    "prefix": ["elohas","eloquenthas"],
     "body": [
       "/**",
       "* ${1}",
       "* ${2}",
       "* @return ${3:void}",
       "*/",
-      "public function ${5:functionname}() {",
+      "public function ${4:functionname}() {",
       "  return \\$this->${5|hasManyThrough,hasOneThrough|}(;",
       "      '${30:App\\Post}',;",
       "      '${40:App\\User}',;",
@@ -49,7 +49,7 @@
     "description": " Eloquent Relation hasManyThrough,hasOneThrough Snippet",
   },
   "eloquentmorphTo": {
-    "prefix": "eloquentmorphTo",
+    "prefix": ["elomorp","eloquentmorphTo"],
     "body": [
       "/**",
       "* ${1}",
@@ -63,7 +63,7 @@
     "description": " Eloquent Relation hasManyThrough,hasOneThrough Snippet",
   },
   "eloquentmutator": {
-    "prefix": "eloquentmutator",
+    "prefix": ["elomuta","eloquentmutator"],
     "body": [
       " /**",
       " * ${10:attname}",
@@ -79,6 +79,7 @@
     "description": " Eloquent A Mutator Snippet",
   },
   "eloquentextends": {
+    "prefix": ["eloext","eloquentextends"],
     "body": [
       "    include_once __DIR__.'${10}';",
       "\r",
@@ -112,7 +113,6 @@
       "    }",
       ""
     ],
-    "prefix": "eloquentextends",
     "description": "Eloquent Model Extends "
   }
 }
