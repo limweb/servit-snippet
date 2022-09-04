@@ -1,5 +1,5 @@
 {
-    "namesp":{ 
+    "namesp":{
 	   "prefix": "namesp",
 	   "body": "namespace ${TM_DIRECTORY/.*(services|controllers|models)\\\\(.*)/$2/};",
 	   "description": "name space for  services controllers models"
@@ -144,7 +144,7 @@
     },
     "rfperpage": {
         "prefix": "rfperpage",
-        "body": "\r\n\t\t\t$o = new stdClass();\r\n\t\t\t$page = 0;  $perpage = 10;\r\n\t\t\tif(isset($this->input->page)){\r\n\t\t\t\t$page = $this->input->page;\r\n\t\t\t}\r\n\t\t\tif(isset($this->input->perpage)) {\r\n\t\t\t\t$perpage = $this->input->perpage;\r\n\t\t\t}\r\n\r\n\t\t\t$${10} = $this->input->${10};\r\n\t\t\t$${20} = $this->input->${20};\r\n\t\t\t$${30} = $this->input->${30};\r\n\t\t\t$ = $this->input->;\r\n\r\n\t\t\t$qry= ${50}::query();\r\n\t\t\tif($${10} != ${51}) $qry->where('${60}',$${10});\r\n\t\t\tif($${20} != ${61}) $qry->where('${70}',$${20});\r\n\t\t\tif($${30} != ${71}) $qry->where('${80}',$${30});\r\n\t\t\tif($ != ${81}) $qry->where('${90}',$);\r\n\t\t\t${0}\r\n\t\t\t$collection = $qry->get();\r\n\t\t\t$o->count = $collection->count();\r\n\t\t\t$rs = $collection->splice($page*$perpage, $perpage);\r\n\t\t\t$o->data = $rs;\r\n\t\t\t$o->input = $this->input;\r\n",
+        "body": "\r\n\t\t\t\\$o = new stdClass();\r\n\t\t\t\\$page = 0;  \\$perpage = 10;\r\n\t\t\tif(isset(    \\$this->input->page)){\r\n\t\t\t\t\\$page = \\$this->input->page;\r\n\t\t\t}\r\n\t\t\tif(isset(    \\$this->input->perpage)) {\r\n\t\t\t\t\\$perpage = \\$this->input->perpage;\r\n\t\t\t}\r\n\r\n\t\t\t\\$${10} = \\$this->input->${10};\r\n\t\t\t\\$${20} = \\$this->input->${20};\r\n\t\t\t\\$${30} = \\$this->input->${30};\r\n\t\t\t\\$ = \\$this->input->;\r\n\r\n\t\t\t\\$qry= ${50}::query();\r\n\t\t\tif(    \\$${10} != ${51}) \\$qry->where('${60}',\\$${10});\r\n\t\t\tif(    \\$${20} != ${61}) \\$qry->where('${70}',\\$${20});\r\n\t\t\tif(    \\$${30} != ${71}) \\$qry->where('${80}',\\$${30});\r\n\t\t\tif(    \\$ != ${81}) \\$qry->where('${90}',\\$);\r\n\t\t\t${0}\r\n\t\t\t\\$collection = \\$qry->get();\r\n\t\t\t\\$o->count = \\$collection->count();\r\n\t\t\t\\$rs = \\$collection->splice(    \\$page*\\$perpage, \\$perpage);\r\n\t\t\t\\$o->data = \\$rs;\r\n\t\t\t\\$o->input = \\$this->input;\r\n",
         "description": "",
     },
     "rfisset": {
