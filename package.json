@@ -246,6 +246,6 @@
       "vscode-test": "^1.4.1"
    },
    "dependencies": {
-      "vsce": "^2.10.2"
+      "vsce": "^2.11.0"
    }
 }
