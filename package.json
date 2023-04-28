@@ -1,251 +1,339 @@
 {
-   "name": "servit-snippet",
-   "displayName": "servit-snippet",
-   "publisher": "limweb",
-   "description": "servit-snippet  snippet for servit framework",
-   "icon": "logo.png",
-   "version": "0.0.24",
-   "engines": {
-      "vscode": "^1.52.0"
-   },
-   "keywords": [
-      "php",
-      "vue",
-      "servit",
-      "jacwrider"
-   ],
-   "homepage": "https://github.com/limweb/servit-snippet/blob/master/README.md",
-   "repository": {
-      "type": "git",
-      "url": "https://github.com/limweb/servit-snippet"
-   },
-   "activationEvents": [
-      "onCommand:tlen-ext.tlenVersion"
-   ],
-   "categories": [
-      "Snippets",
-      "Keymaps",
-      "Other"
-   ],
-   "main": "./src/extension.js",
-   "contributes": {
-      "snippets": [
-         {
-            "language": "",
-            "path": "./snippets/snippets.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/restserver.code-snippets"
-         },
-         {
-            "language": "php",
-            "path": "./snippets/php.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/vfox.code-snippets"
-         },
-         {
-            "language": "php",
-            "path": "./snippets/jacwright.code-snippets"
-         },
-         {
-            "language": "php",
-            "path": "./snippets/eloquent.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/dockercompose.code-snippets"
-         },
-         {
-            "language": "javascript",
-            "path": "./snippets/restful.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/tlen-docker.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/tlen.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/vuecdn.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/vuejs.code-snippets"
-         },
-         {
-            "language": "",
-            "path": "./snippets/jenkins.code-snippets"
-         },
-         {
-            "language": "go",
-            "path": "./snippets/go.code-snippets"
-         }
-      ],
-      "commands": [
-         {
-            "command": "tlen-ext.tlenVersion",
-            "title": "tlen version"
-         }
-      ],
-      "menus": {
-         "editor/context": [
-            {
-               "command": "tlen-ext.tlenVersion",
-               "group": "tlen"
-            }
-         ]
-      },
-      "keybindings": [
-         {
-            "key": "ctrl+.",
-            "command": "workbench.action.showCommands"
-         },
-         {
-            "key": "ctrl+d",
-            "command": "editor.action.deleteLines",
-            "when": "editorTextFocus && !editorReadonly"
-         },
-         {
-            "key": "ctrl+shift+t",
-            "command": "shellLauncher.launch"
-         },
-         {
-            "key": "ctrl+shift+k",
-            "command": "-editor.action.deleteLines",
-            "when": "editorTextFocus && !editorReadonly"
-         },
-         {
-            "key": "ctrl+'",
-            "command": "workbench.action.terminal.toggleTerminal"
-         },
-         {
-            "key": "ctrl+`",
-            "command": "-workbench.action.terminal.toggleTerminal"
-         },
-         {
-            "key": "ctrl+shift+'",
-            "command": "workbench.action.terminal.new"
-         },
-         {
-            "key": "ctrl+shift+`",
-            "command": "-workbench.action.terminal.new"
-         },
-         {
-            "key": "ctrl+l",
-            "command": "workbench.action.gotoLine"
-         },
-         {
-            "key": "ctrl+g",
-            "command": "-workbench.action.gotoLine"
-         },
-         {
-            "key": "f12",
-            "command": "editor.action.formatDocument",
-            "when": "editorTextFocus && !editorReadonly"
-         },
-         {
-            "key": "shift+alt+f",
-            "command": "-editor.action.formatDocument",
-            "when": "editorTextFocus && !editorReadonly"
-         },
-         {
-            "key": "ctrl+m",
-            "command": "workbench.action.editor.changeLanguageMode"
-         },
-         {
-            "key": "ctrl+k m",
-            "command": "-workbench.action.editor.changeLanguageMode"
-         },
-         {
-            "key": "ctrl+k ctrl+m",
-            "command": "editor.action.jumpToBracket",
-            "when": "editorFocus"
-         },
-         {
-            "key": "f12",
-            "command": "HookyQR.beautifyFile"
-         },
-         {
-            "key": "alt+shift+f",
-            "command": "phpformatter.fix",
-            "when": "editorFocus"
-         },
-         {
-            "key": "ctrl+k ctrl+p",
-            "command": "workbench.action.keepEditor"
-         },
-         {
-            "key": "ctrl+k enter",
-            "command": "-workbench.action.keepEditor"
-         },
-         {
-            "key": "ctrl+t",
-            "command": "bookmarks.toggle",
-            "when": "editorTextFocus"
-         },
-         {
-            "key": "ctrl+alt+k",
-            "command": "-bookmarks.toggle",
-            "when": "editorTextFocus"
-         },
-         {
-            "key": "ctrl+alt+down",
-            "command": "-editor.action.insertCursorBelow",
-            "when": "editorTextFocus"
-         },
-         {
-            "key": "ctrl+alt+win+down",
-            "command": "editor.action.copyLinesDownAction"
-         },
-         {
-            "key": "ctrl+alt+pagedown",
-            "command": "-workbench.action.terminal.scrollDown",
-            "when": "terminalFocus && terminalProcessSupported"
-         },
-         {
-            "key": "ctrl+shift+r",
-            "command": "workbench.action.reopenClosedEditor"
-         },
-         {
-            "key": "ctrl+shift+t",
-            "command": "-workbench.action.reopenClosedEditor"
-         },
-         {
-            "key": "ctrl+alt+win+up",
-            "command": "editor.action.insertCursorAbove",
-            "when": "editorTextFocus"
-         },
-         {
-            "key": "ctrl+alt+up",
-            "command": "-editor.action.insertCursorAbove",
-            "when": "editorTextFocus"
-         }
-      ]
-   },
-   "scripts": {
-      "build": "vsce package",
-      "lint": "eslint .",
-      "pretest": "yarn run lint",
-      "test": "node ./test/runTest.js"
-   },
-   "devDependencies": {
-      "@types/glob": "^7.1.3",
-      "@types/mocha": "^8.0.4",
-      "@types/node": "^12.11.7",
-      "@types/vscode": "^1.52.0",
-      "eslint": "^7.15.0",
-      "glob": "^7.1.6",
-      "mocha": "^8.1.3",
-      "typescript": "^4.1.2",
-      "vscode-test": "^1.4.1"
-   },
-   "dependencies": {
-      "vsce": "^2.11.0"
-   }
+  "name": "servit-snippet",
+  "displayName": "servit-snippet",
+  "publisher": "limweb",
+  "description": "servit-snippet  snippet for servit framework",
+  "icon": "logo.png",
+  "version": "0.0.25",
+  "engines": {
+     "vscode": "^1.77.0"
+  },
+  "keywords": [
+     "php",
+     "vue",
+     "servit",
+     "bookmark",
+     "bookmarks",
+     "mark",
+     "jacwrider"
+  ],
+  "homepage": "https://github.com/limweb/servit-snippet/blob/master/README.md",
+  "repository": {
+     "type": "git",
+     "url": "https://github.com/limweb/servit-snippet"
+  },
+  "categories": [
+     "Snippets",
+     "Keymaps",
+     "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "snippets": [
+       {
+          "language": "",
+          "path": "./snippets/snippets.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/restserver.code-snippets"
+       },
+       {
+          "language": "php",
+          "path": "./snippets/php.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/vfox.code-snippets"
+       },
+       {
+          "language": "php",
+          "path": "./snippets/jacwright.code-snippets"
+       },
+       {
+          "language": "php",
+          "path": "./snippets/eloquent.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/dockercompose.code-snippets"
+       },
+       {
+          "language": "javascript",
+          "path": "./snippets/restful.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/tlen-docker.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/tlen.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/vuecdn.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/vuejs.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/jenkins.code-snippets"
+       },
+       {
+          "language": "go",
+          "path": "./snippets/go.code-snippets"
+       }
+    ],
+    "commands": [
+       {
+          "command": "tlen-ext.tlenVersion",
+          "title": "tlen version"
+       },
+       {
+          "command": "tlen-ext.toogleBookmarks",
+          "title": "Bookmarks TL: Toogle Bookmarks"
+       },
+       {
+          "command": "tlen-ext.clearAllBookmarks",
+          "title": "Bookmarks TL: Clear All Bookmarks"
+       },
+       {
+          "command": "tlen-ext.navigateToNextBookmark",
+          "title": "Bookmarks TL: Move cursor to the next bookmark"
+       },
+       {
+          "command": "tlen-ext.navigateToPrevBookmark",
+          "title": "Bookmarks TL: Move cursor to the previous bookmark"
+       }
+    ],
+    "menus": {
+       "editor/context": [
+          {
+             "command": "tlen-ext.tlenVersion",
+             "group": "tlen"
+          }
+       ]
+    },
+    "keybindings": [
+       {
+          "command": "tlen-ext.toogleBookmarks",
+          "key": "ctrl+b",
+          "mac": "cmd+b",
+          "when": "editorTextFocus"
+       },
+       {
+          "command": "tlen-ext.clearAllBookmarks",
+          "key": "ctrl+shift+b",
+          "mac": "cmd+shift+b",
+          "when": "editorTextFocus"
+       },
+       {
+          "command": "tlen-ext.navigateToNextBookmark",
+          "key": "f2",
+          "mac": "f2",
+          "when": "editorTextFocus"
+       },
+       {
+          "command": "tlen-ext.navigateToPrevBookmark",
+          "key": "shift+f2",
+          "mac": "shift+f2",
+          "when": "editorTextFocus"
+       },
+       {
+          "key": "ctrl+.",
+          "command": "workbench.action.showCommands"
+       },
+       {
+          "key": "ctrl+d",
+          "command": "editor.action.deleteLines",
+          "when": "editorTextFocus && !editorReadonly"
+       },
+       {
+          "key": "ctrl+shift+t",
+          "command": "shellLauncher.launch"
+       },
+       {
+          "key": "ctrl+shift+k",
+          "command": "-editor.action.deleteLines",
+          "when": "editorTextFocus && !editorReadonly"
+       },
+       {
+          "key": "ctrl+'",
+          "command": "workbench.action.terminal.toggleTerminal"
+       },
+       {
+          "key": "ctrl+`",
+          "command": "-workbench.action.terminal.toggleTerminal"
+       },
+       {
+          "key": "ctrl+shift+'",
+          "command": "workbench.action.terminal.new"
+       },
+       {
+          "key": "ctrl+shift+`",
+          "command": "-workbench.action.terminal.new"
+       },
+       {
+          "key": "ctrl+l",
+          "command": "workbench.action.gotoLine"
+       },
+       {
+          "key": "ctrl+g",
+          "command": "-workbench.action.gotoLine"
+       },
+       {
+          "key": "f12",
+          "command": "editor.action.formatDocument",
+          "when": "editorTextFocus && !editorReadonly"
+       },
+       {
+          "key": "shift+alt+f",
+          "command": "-editor.action.formatDocument",
+          "when": "editorTextFocus && !editorReadonly"
+       },
+       {
+          "key": "ctrl+m",
+          "command": "workbench.action.editor.changeLanguageMode"
+       },
+       {
+          "key": "ctrl+k m",
+          "command": "-workbench.action.editor.changeLanguageMode"
+       },
+       {
+          "key": "ctrl+k ctrl+m",
+          "command": "editor.action.jumpToBracket",
+          "when": "editorFocus"
+       },
+       {
+          "key": "f12",
+          "command": "HookyQR.beautifyFile"
+       },
+       {
+          "key": "alt+shift+f",
+          "command": "phpformatter.fix",
+          "when": "editorFocus"
+       },
+       {
+          "key": "ctrl+k ctrl+p",
+          "command": "workbench.action.keepEditor"
+       },
+       {
+          "key": "ctrl+k enter",
+          "command": "-workbench.action.keepEditor"
+       },
+       {
+          "key": "ctrl+t",
+          "command": "bookmarks.toggle",
+          "when": "editorTextFocus"
+       },
+       {
+          "key": "ctrl+alt+k",
+          "command": "-bookmarks.toggle",
+          "when": "editorTextFocus"
+       },
+       {
+          "key": "ctrl+alt+down",
+          "command": "-editor.action.insertCursorBelow",
+          "when": "editorTextFocus"
+       },
+       {
+          "key": "ctrl+alt+win+down",
+          "command": "editor.action.copyLinesDownAction"
+       },
+       {
+          "key": "ctrl+alt+pagedown",
+          "command": "-workbench.action.terminal.scrollDown",
+          "when": "terminalFocus && terminalProcessSupported"
+       },
+       {
+          "key": "ctrl+shift+r",
+          "command": "workbench.action.reopenClosedEditor"
+       },
+       {
+          "key": "ctrl+shift+t",
+          "command": "-workbench.action.reopenClosedEditor"
+       },
+       {
+          "key": "ctrl+alt+win+up",
+          "command": "editor.action.insertCursorAbove",
+          "when": "editorTextFocus"
+       },
+       {
+          "key": "ctrl+alt+up",
+          "command": "-editor.action.insertCursorAbove",
+          "when": "editorTextFocus"
+       }
+    ],
+    "configuration": {
+       "type": "object",
+       "title": "tlen-ext configuration",
+       "properties": {
+          "tlen-ext.alignTopOnNavigation": {
+             "type": "boolean",
+             "default": false,
+             "description": "If set bookmarked line will become the topmost when using next / previous navigation commands"
+          },
+          "tlen-ext.renderLine": {
+             "type": "boolean",
+             "default": true,
+             "description": "If set render a line on the bookmark"
+          },
+          "tlen-ext.lineColor": {
+             "type": [
+                "string"
+             ],
+             "default": "#65EAB9",
+             "description": "Change the line color. (Ex: 'red', '#FFF' #FFFFFFF, 'RGB(255,255,255)','RGB(255, 255, 255. 0.5) )"
+          },
+          "tlen-ext.lineWidth": {
+             "type": [
+                "string"
+             ],
+             "default": "1px"
+          },
+          "tlen-ext.lineStyle": {
+             "type": [
+                "string"
+             ],
+             "enum": [
+                "solid",
+                "dashed",
+                "inset",
+                "double",
+                "groove",
+                "outset",
+                "ridge"
+             ],
+             "default": "solid"
+          }
+       }
+    }
+ },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "pnpm vsce package --no-dependencies",
+    "publish": "pnpm vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.77.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4",
+    "@vscode/test-electron": "^2.3.0"
+  }
 }
