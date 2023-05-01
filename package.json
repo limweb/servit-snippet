@@ -315,12 +315,13 @@
  },
   "scripts": {
     "vscode:prepublish": "pnpm run compile",
+    "build": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js",
-    "package": "pnpm vsce package --no-dependencies",
+    "package": "pnpm run build && pnpm vsce package --no-dependencies",
     "publish": "pnpm vsce publish --no-dependencies"
   },
   "devDependencies": {
