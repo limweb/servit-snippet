@@ -192,14 +192,14 @@ export const bookmarksManager = {
     }
 
     const lines = vscode.window.activeTextEditor.selections.map(
-      (selection) => selection.active.line
+      (selection:any) => selection.active.line
     )
 
     const currentLines = this._getLines()
-    const newLines = lines.filter((l) => !currentLines.includes(l))
+    const newLines = lines.filter((l:any) => !currentLines.includes(l))
 
     if (newLines.length) {
-      newLines.forEach((l) => this._bookmarkLine(l, context))
+      newLines.forEach((l:any) => this._bookmarkLine(l, context))
     } else {
       this._clearBookmarksAtLines(lines)
     }
