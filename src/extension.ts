@@ -14,37 +14,37 @@ export function activate(context: vscode.ExtensionContext): void {
 
   context.subscriptions.push(
     vscode.commands.registerCommand('tlen-ext.toogleBookmarks', () => {
+      console.log('toogleBookmarks--->');
       bookmarksManager.toggleBookmarks(context)
     })
   )
 
   context.subscriptions.push(
     vscode.commands.registerCommand('tlen-ext.clearAllBookmarks', () => {
+      console.log('clearAllBookmarks--->');
       bookmarksManager.clearAllBookmarks(context)
     })
   )
 
   context.subscriptions.push(
-    vscode.commands.registerCommand(
-      'tlen-ext.navigateToNextBookmark',
-      () => {
+    vscode.commands.registerCommand('tlen-ext.navigateToNextBookmark', () => {
+        console.log('navigateToNext--->');
         bookmarksManager.navigateToNext()
       }
     )
   )
 
   context.subscriptions.push(
-    vscode.commands.registerCommand(
-      'tlen-ext.navigateToPrevBookmark',
-      () => {
+    vscode.commands.registerCommand('tlen-ext.navigateToPrevBookmark',() => {
+        console.log('navigateToPrev--->');
         bookmarksManager.navigateToPrev()
       }
     )
   )
 
   // Load bookmarks after active file changes.
-  vscode.window.onDidChangeActiveTextEditor(
-    (editor) => {
+  vscode.window.onDidChangeActiveTextEditor((editor) => {
+      console.log('onDidChangeActiveTextEditor--->');
       bookmarksManager.loadForFile(editor?.document.uri.fsPath, context)
     },
     null,
@@ -54,6 +54,7 @@ export function activate(context: vscode.ExtensionContext): void {
   // The only way for now to keep bookmarks positions in sync with what is shown in VS Code.
   // @see https://github.com/microsoft/vscode/issues/54147
   vscode.workspace.onDidChangeTextDocument((event) => {
+    console.log('onDidChangeTextDocument--->');
     bookmarksManager.handleTextChanges(context, event.contentChanges)
   })
 }

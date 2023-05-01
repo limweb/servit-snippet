@@ -71,37 +71,58 @@ export const getPrevLine = (lines: number[], currentLine: number): number => {
 }
 
 export const createDecoration = (
-  context: vscode.ExtensionContext
+  context: vscode.ExtensionContext,line: number
 ): vscode.TextEditorDecorationType => {
   let renderLine = vscode.workspace.getConfiguration('tlen-ext').get('renderLine', true);
-  if (renderLine) {
-
-    const borderColor: string = vscode.workspace.getConfiguration('tlen-ext').get('borderColor', "#65EAB9");
-    const borderWidth = vscode.workspace.getConfiguration('tlen-ext').get("borderWidth", "2px");
-    const borderStyle = vscode.workspace.getConfiguration('tlen-ext').get("borderStyle", "solid");
-
-    const decorationOptions: vscode.DecorationRenderOptions = {
-      gutterIconPath: context.asAbsolutePath('images/icon.svg'),
-      dark: {
-        gutterIconPath: context.asAbsolutePath('images/icond.svg'),
-      },
+  let linex = '$';
+  const gutterIconPath = vscode.Uri.parse(
+    `data:image/svg+xml,${encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg"> <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1"> <g fill="#00ff25" stroke="null"><path d="M5.573914546804859,0.035123038858889274 C4.278736002284275,0.035123038858889274 3.228793828301391,0.9189688905396587 3.228793828301391,2.005394862080541 L3.228793828301391,15.844184705765102 L7.923495246522241,11.89191599548129 L12.618212313799981,15.844184705765102 L12.618212313799981,2.005394862080541 C12.618212313799981,0.9172430665361684 11.56845792849979,0.035123038858889274 10.273075946239627,0.035123038858889274 L5.573898897747966,0.035123038858889274 L5.573914546804859,0.035123038858889274 z" stroke="null"></path></g> </g> <text text-anchor="middle" alignment-baseline="middle" x="7.6" y="7.5" fill="" font-weight="bold" font-size="9" font-family="Menlo, Monaco, monospace">$</text> </svg>`,
+    )}`,
+  );
+  const borderColor: string = vscode.workspace.getConfiguration('tlen-ext').get('borderColor', "#65EAB9");
+  const borderWidth = vscode.workspace.getConfiguration('tlen-ext').get("borderWidth", "3px");
+  const borderStyle = vscode.workspace.getConfiguration('tlen-ext').get("borderStyle", "solid");  
+  let decorationOptions: vscode.DecorationRenderOptions = {
+      gutterIconPath,
       isWholeLine: true,
       borderWidth: `0 0 ${borderWidth} 0`,
+      // borderWidth: '2px',
+      backgroundColor: '#12ff1220',
       borderStyle: borderStyle,
-      borderColor: borderColor
-    }
-
-    return vscode.window.createTextEditorDecorationType(decorationOptions);
-
-  } else {
-    const decorationOptions: vscode.DecorationRenderOptions = {
-      gutterIconPath: context.asAbsolutePath('images/icon.svg'),
-      dark: {
-        gutterIconPath: context.asAbsolutePath('images/icond.svg'),
-      },
-    }
-    return vscode.window.createTextEditorDecorationType(decorationOptions)
+      borderColor: borderColor,
+      overviewRulerLane: vscode.OverviewRulerLane.Full,
+      overviewRulerColor: '#12ff1288'
   }
+
+  // if (renderLine) {
+  //   decorationOptions = {
+  //     gutterIconPath,
+  //     // gutterIconPath: context.asAbsolutePath('images/icon.svg'),
+  //     // dark: {
+  //     //   gutterIconPath: context.asAbsolutePath('images/icond.svg'),
+  //     // },
+  //     isWholeLine: true,
+  //     borderWidth: `0 0 ${borderWidth} 0`,
+  //     borderStyle: borderStyle,
+  //     borderColor: borderColor
+  //   }
+  //  } else {
+  //   decorationOptions = {
+  //     gutterIconPath,
+  //     isWholeLine: true,
+  //     borderWidth: `0 0 ${borderWidth} 0`,
+  //     borderStyle: borderStyle,
+  //     borderColor: borderColor      
+  //     // gutterIconPath: context.asAbsolutePath('images/icon.svg'),
+  //     // dark: {
+  //     //   gutterIconPath: context.asAbsolutePath('images/icond.svg'),
+  //     // },
+  //   }
+
+  // }
+  
+    return vscode.window.createTextEditorDecorationType(decorationOptions);
 }
 
 export const createLinesRange = (start: number, endInclusive: number) => {

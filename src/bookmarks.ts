@@ -144,10 +144,24 @@ export const bookmarksManager = {
     lines.forEach((line) => this._bookmarkLine(line, context))
   },
 
+  _createGutterRulerDecoration(overviewRulerLane?: vscode.OverviewRulerLane,overviewRulerColor?: string | vscode.ThemeColor, gutterIconPath?: string | vscode.Uri): vscode.TextEditorDecorationType {
+
+      const decorationOptions: vscode.DecorationRenderOptions = {
+          gutterIconPath,
+          overviewRulerLane,
+          overviewRulerColor
+      };
+
+      // decorationOptions.isWholeLine = false;
+      decorationOptions.isWholeLine = true;
+
+      return vscode.window.createTextEditorDecorationType(decorationOptions);
+  },
+
   _bookmarkLine(line: number, context: vscode.ExtensionContext) {
     const key = getKey(line)
     // @ts-ignore
-    const decoration = this._getBookmarks(key)?.decoration || createDecoration(context)
+    const decoration = this._getBookmarks(key)?.decoration || createDecoration(context,line)
 
     const range = line2range(line)
     vscode.window.activeTextEditor?.setDecorations(decoration, [range])
