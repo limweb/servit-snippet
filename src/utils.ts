@@ -92,7 +92,7 @@ export const createDecoration = (
       borderStyle: borderStyle,
       borderColor: borderColor,
       overviewRulerLane: vscode.OverviewRulerLane.Full,
-      overviewRulerColor: '#12ff1288'
+      overviewRulerColor: '#00ff00'
   }
 
   // if (renderLine) {
