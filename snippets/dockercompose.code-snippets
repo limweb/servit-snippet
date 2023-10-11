@@ -1,6 +1,6 @@
 {
 	"dockercompose": {
-		"prefix": "dockercompose",
+		"prefix": ["dockercompose","dc"],
 		"body": [
 			"#  docker-compose -f docker-compose.yml config check validate config",
 			"version: \"${10|3.7,3.1,2.1|}\"",
@@ -72,7 +72,6 @@
 			"",
 		],
 		"description": "docker compose snippet by tlen",
-		"scope": "yml,yaml,"
 	},
 	"dockerservice": {
 		"body": [
@@ -124,7 +123,6 @@
 		],
 		"prefix": "dockerservice",
 		"description": "docker composer add service",
-		"scope": "yml,yaml,"
 	},
 	"nginxcfg": {
 		"body": [
