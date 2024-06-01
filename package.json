@@ -4,7 +4,7 @@
   "publisher": "limweb",
   "description": "servit-snippet  snippet for servit framework",
   "icon": "logo.png",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "engines": {
      "vscode": "^1.77.0"
   },
@@ -78,6 +78,10 @@
        {
           "language": "",
           "path": "./snippets/vuejs.code-snippets"
+       },
+       {
+          "language": "",
+          "path": "./snippets/vuejs3i.code-snippets"
        },
        {
           "language": "",
