@@ -1,14 +1,25 @@
 import * as vscode from 'vscode'
 import { bookmarksManager } from './bookmarks'
-import * as pkg  from "./version.json"
+import * as pkg from "./version.json"
 
 export function activate(context: vscode.ExtensionContext): void {
   bookmarksManager.init(context)
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('tlen-ext.tlenVersion', function() {
-      console.log('pkg version--->',pkg.version);
-      vscode.window.showInformationMessage('Tlen version: '+ pkg.version +' typescript' );
+    vscode.commands.registerCommand('tlen-ext.tlenVersion', function () {
+      console.log('pkg version--->', pkg.version);
+      vscode.window.showInformationMessage('Tlen version: ' + pkg.version + ' typescript');
+    })
+  )
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand('tlen-ext.tlenI18nkey', async function () {
+      console.log('tlen conver clipboard to i18n key--->');
+      let clipboard_content = await vscode.env.clipboard.readText();
+      if ((typeof clipboard_content) === 'string') {
+        let newtext = clipboard_content.toLowerCase().replaceAll(/\s(.)/gm, (x: string) => x.toUpperCase()).replaceAll(' ', '').replaceAll(/[!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/g, '')
+        vscode.env.clipboard.writeText(newtext)
+      }
     })
   )
 
@@ -28,25 +39,25 @@ export function activate(context: vscode.ExtensionContext): void {
 
   context.subscriptions.push(
     vscode.commands.registerCommand('tlen-ext.navigateToNextBookmark', () => {
-        console.log('navigateToNext--->');
-        bookmarksManager.navigateToNext()
-      }
+      console.log('navigateToNext--->');
+      bookmarksManager.navigateToNext()
+    }
     )
   )
 
   context.subscriptions.push(
-    vscode.commands.registerCommand('tlen-ext.navigateToPrevBookmark',() => {
-        console.log('navigateToPrev--->');
-        bookmarksManager.navigateToPrev()
-      }
+    vscode.commands.registerCommand('tlen-ext.navigateToPrevBookmark', () => {
+      console.log('navigateToPrev--->');
+      bookmarksManager.navigateToPrev()
+    }
     )
   )
 
   // Load bookmarks after active file changes.
   vscode.window.onDidChangeActiveTextEditor((editor) => {
-      console.log('onDidChangeActiveTextEditor--->');
-      bookmarksManager.loadForFile(editor?.document.uri.fsPath, context)
-    },
+    console.log('onDidChangeActiveTextEditor--->');
+    bookmarksManager.loadForFile(editor?.document.uri.fsPath, context)
+  },
     null,
     context.subscriptions
   )
@@ -59,4 +70,4 @@ export function activate(context: vscode.ExtensionContext): void {
   })
 }
 
-export function deactivate() {}
+export function deactivate() { }

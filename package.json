@@ -98,6 +98,10 @@
           "title": "tlen version"
        },
        {
+          "command": "tlen-ext.tlenI18nkey",
+          "title": "tlen I18nkey"
+       },
+       {
           "command": "tlen-ext.toogleBookmarks",
           "title": "Bookmarks TL: Toogle Bookmarks"
        },
