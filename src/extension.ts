@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext): void {
       console.log('tlen conver clipboard to i18n key--->');
       let clipboard_content = await vscode.env.clipboard.readText();
       if ((typeof clipboard_content) === 'string') {
-        let newtext = clipboard_content.toLowerCase().replaceAll(/\s(.)/gm, (x: string) => x.toUpperCase()).replaceAll(' ', '').replaceAll(/[!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/g, '')
+        let newtext = clipboard_content.toLowerCase().replaceAll(/\s(.)/gm, (x: string) => x.toUpperCase()).replaceAll(' ', '').replaceAll(/[!"`'#%&.,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/g, '')
         vscode.env.clipboard.writeText(newtext)
       }
     })
