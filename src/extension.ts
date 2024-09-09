@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext): void {
           await vscode.commands.executeCommand("translates.clipboard")
           let clipboard_content = await vscode.env.clipboard.readText();
           if ((typeof clipboard_content) === 'string') {
-            let newtext = clipboard_content.toLowerCase().replaceAll(/\s(.)/gm, (x: string) => x.toUpperCase()).replaceAll(' ', '').replaceAll(/[!"`'#%&,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/g, '')
+            let newtext = clipboard_content.toLowerCase().replaceAll(/\s(.)/gm, (x: string) => x.toUpperCase()).replaceAll(/[ !"`'#%&.,:;<>=@{}~\$\(\)\*\+\/\\\?\[\]\^\|]+/g, '')
             vscode.env.clipboard.writeText('txt.' + newtext)
           }
         }
